@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-background="PANTILLA_FINANZAS.png">
+					<h1>Kmeans</h1>
+					<h3>Introducción intuitiva</h3>
+					<p>
+						<small>Created by Diego Manzur</small>
+					</p>
+				</section>
+				<section>
+					<section data-background="PANTILLA_FINANZAS1.png"> 
+						<h2>Introducción</h2>
+						<br>
+						<p style="font-size:70%;">El término <em>clustering</em> hace referencia a un amplio abanico de técnicas <em>unsupervised</em> cuya finalidad es encontrar patrones o grupos (<em>clusters</em>) dentro de un conjunto de observaciones. Las particiones se establecen de forma que, las observaciones que están dentro de un mismo grupo, son similares entre ellas y distintas a las observaciones de otros grupos. Se trata de un método <em>unsupervised</em>, ya que el proceso ignora la variable respuesta que indica a que grupo pertenece realmente cada observación (si es que existe tal variable).</p>
+					</section>
+
+					<section data-background="PANTILLA_FINANZAS1.png">
+						<h2>Tipos de Kmeans</h2>
+						<br>
+						<ul>
+							<li><p><em>Partitioning Clustering</em>: Este tipo de algoritmos requieren que el usuario especifique de antemano el número de <em>clusters</em> que se van a crear (<em>K-means</em>, <em>K-medoids</em>, <em>CLARA</em>).</p></li>
+							<li><p><em>Hierarchical Clustering</em>: Este tipo de algoritmos no requieren que el usuario especifique de antemano el número de <em>clusters</em>. (<em>agglomerative clustering</em>, <em>divisive clusterig</em>).</p></li>
+						</ul>
+					</section>
+
+				</section>
+
+				<section>
+					<section data-background="PANTILLA_FINANZAS1.png">
+						<h2> Medidas de Distacia </h2>
+						<br>
+						<p align="justify" style="font-size: 60%;">Todos los métodos de <em>clustering</em> tienen una cosa en común, para poder llevar a cabo las agrupaciones necesitan definir y cuantificar la similitud entre las observaciones. El término distancia se emplea dentro del contexto del <em>clustering</em> como cuantificación de la similitud o diferencia entre observaciones. Si se representan las observaciones en un espacio <em>p</em> dimensional, siendo <em>p</em> el número de variables asociadas a cada observación, cuando más se asemejen dos observaciones más próximas estarán, de ahí que se emplee el término distancia. La característica que hace del <em>clustering</em> un método adaptable a escenarios muy diversos es que puede emplear cualquier tipo de distancia, lo que permite al investigador escoger la más adecuada para el estudio en cuestión. A continuación, se describen algunas de las más utilizadas. <br><br></p>
+					</section>
+
+					<section data-background="PANTILLA_FINANZAS1.png">
+						<h2> Propiedades de Medidas de Distacia </h2>
+						<br>
+						<ul>
+							<li>$$d(p,q) = 0 \Leftrightarrow p=q$$</li>
+							<li>$$d(p,q) = d(q,p)$$</li>
+							<li>$$d(p,r) \leq d(p,q) + d(q,r)$$</li>
+							<li>$$d(p,q) \geq 0 $$</li>
+						</ul>
+						</section>
+
+					<section data-background="PANTILLA_FINANZAS1.png">
+						<h2> Distancia Euclidiana </h2>
+						<br>
+						<p  align="justify" style="font-size: 60%;">La distancia euclídea entre dos puntos <em>p</em> y <em>q</em> se define como la longitud del segmento que une ambos puntos. En coordenadas cartesianas, la distancia euclídea se calcula empleando el teorema de Pitágoras. Por ejemplo, en un espacio de dos dimensiones en el que cada punto está definido por las coordenadas <span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mo stretchy=&quot;false&quot;>(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy=&quot;false&quot;>)</mo></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 2.78em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.317em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.345em, 1002.23em, 2.595em, -999.998em); top: -2.22em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mo" id="MathJax-Span-3" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-4" style="font-family: MathJax_Math-italic;">x</span><span class="mo" id="MathJax-Span-5" style="font-family: MathJax_Main;">,</span><span class="mi" id="MathJax-Span-6" style="font-family: MathJax_Math-italic; padding-left: 0.188em;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.002em;"></span></span><span class="mo" id="MathJax-Span-7" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.225em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.331em; border-left: 0px solid; width: 0px; height: 1.336em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-1"></script></span>, la distancia euclídea entre <em>p</em> y <em>q</em> viene dada por la ecuación:</p>
+						<p> $$d_{euc}(p,q) = \sqrt{(x_p - x_q)^2 + (y_p - y_q)^2}$$ </p>
+					</section>
+
+					<section data-background="PANTILLA_FINANZAS1.png">
+						<h2> Distancia Euclidiana </h2>
+						<br>
+						<p style="font-size: 60%;">Esta ecuación puede generalizarse para un espacio euclídeo <em>n</em>-dimensional donde cada punto está definido por un vector de <em>n</em> coordenadas: $$p=(p_1,p_2,p_3,...,p_n)$$  y $$q=(q_1,q_2,q_3,...,q_n)$$</p>
+						
+						<p style="font-size: 60%;"> $$d_{euc}(p,q) = \sqrt{(p_1 - q_1)^2 + (p_2 - q_2)^2 +...+(p_n - q_n)^2} = \sqrt{ \sum_{i=1}^n (p_i - q_i)^2}$$</p>
+					</section>
+
+					<section data-background="PANTILLA_FINANZAS1.png">
+						<h2> Distancia Manhattan - L1 </h2>
+						<br>
+						<p align="justify" style="font-size: 60%;">La distancia de Manhattan, también conocida como <em>taxicab metric</em>, <em>rectilinear distance</em> o <em>L1 distance</em>, define la distancia entre dos puntos <em>p</em> y <em>q</em> como el sumatorio de las diferencias absolutas entre cada dimensión. Esta medida se ve menos afectada por <em>outliers</em> (es más robusta) que la distancia euclídea debido a que no eleva al cuadrado las diferencias.</p>
+						<p style="font-size: 60%;"> $$d_{man}(p,q) = \sum_{i=1}^n |(p_i - q_i)|$$</p>
+					</section>
+
+					<section data-background="PANTILLA_FINANZAS1.png">
+						<h2> Distancia Correlación </h2>
+						<br>
+						<p align="justify" style="font-size: 60%;">La correlación es una medida de distancia muy útil cuando la definición de similitud se hace en términos de patrón o forma y no de desplazamiento o magnitud. ¿Qué quiere decir esto? En la imagen del apartado de la distancia euclídea, las dos observaciones tienen exactamente el mismo patrón, la única diferencia es que una de ellas está desplazada 4 unidades por encima de la otra. Si se emplea como medida de similitud 1 menos el valor de la correlación, ambas observaciones se consideran idénticas (su distancia es 0).</p>
+						<p style="font-size: 60%;"> $$d_{cor}(p,q) = 1 - \text{correlacion}(p,q)$$</p>
+						<p align="justify" style="font-size: 60%;">donde la correlación puede ser de distintos tipos (<em>Pearson</em>, <em>Spearman</em>, <em>Kendall</em>…) Correlación lineal.</p>
+					</section>
+
+					<section data-background="PANTILLA_FINANZAS1.png">
+						<h2> Problema de Escala </h2>
+						<br>
+						<img src="escala.png">
+					</section>
+
+				</section>
+
+				<section>
+						<section data-background="PANTILLA_FINANZAS1.png">
+							<h2>Intuición de Kmeans</h2>
+							<br>
+
+							<p align="justify" style="font-size: 60%;">El método <em>K-means clustering</em> (MacQueen, 1967) agrupa las observaciones en <em>K</em> <em>clusters</em> distintos, donde el número <em>K</em> lo determina el analista antes de ejecutar del algoritmo. <em>K-means clustering</em> encuentra los <em>K</em> mejores <em>clusters</em>, entendiendo como <em>mejor cluster</em> aquel cuya varianza interna (<em>intra-cluster variation</em>) sea lo más pequeña posible. Se trata por lo tanto de un problema de optimización, en el que se reparten las observaciones en <em>K clusters</em> de forma que la suma de las varianzas internas de todos ellos sea lo menor posible. Para poder solucionar este problema es necesario definir un modo de cuantificar la varianza interna.</p>
+
+						</section>
+
+						<section data-background="PANTILLA_FINANZAS1.png">
+							<h2>Intuición de Kmeans</h2>
+							
+	
+							<p align="justify" style="font-size: 60%;">Considérense <span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-53-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><msub><mi>C</mi><mn>1</mn></msub></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-951" style="width: 1.391em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.16em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.391em, 1001.16em, 2.502em, -999.998em); top: -2.22em; left: 0em;"><span class="mrow" id="MathJax-Span-952"><span class="msubsup" id="MathJax-Span-953"><span style="display: inline-block; position: relative; width: 1.16em; height: 0px;"><span style="position: absolute; clip: rect(3.15em, 1000.74em, 4.123em, -999.998em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-954" style="font-family: MathJax_Math-italic;">C<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.049em;"></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -3.84em; left: 0.697em;"><span class="mn" id="MathJax-Span-955" style="font-size: 70.7%; font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.225em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.219em; border-left: 0px solid; width: 0px; height: 1.114em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi></mi><mn></mn></msub></math></span></span><script type="math/tex" id="MathJax-Element-53"></script></span>,…, <span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-54-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><msub><mi>C</mi><mi>K</mi></msub></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-956" style="width: 1.762em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.438em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.391em, 1001.44em, 2.502em, -999.998em); top: -2.22em; left: 0em;"><span class="mrow" id="MathJax-Span-957"><span class="msubsup" id="MathJax-Span-958"><span style="display: inline-block; position: relative; width: 1.438em; height: 0px;"><span style="position: absolute; clip: rect(3.15em, 1000.74em, 4.123em, -999.998em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-959" style="font-family: MathJax_Math-italic;">C<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.049em;"></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -3.84em; left: 0.697em;"><span class="mi" id="MathJax-Span-960" style="font-size: 70.7%; font-family: MathJax_Math-italic;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.049em;"></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.225em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.219em; border-left: 0px solid; width: 0px; height: 1.114em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>C</mi><mi>K</mi></msub></math></span></span><script type="math/tex" id="MathJax-Element-54"></script></span> como los sets formados por los índices de las observaciones de cada uno de los <em>clusters</em>. Por ejemplo, el set <span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-55-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><msub><mi>C</mi><mn>1</mn></msub></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-961" style="width: 1.391em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.16em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.391em, 1001.16em, 2.502em, -999.998em); top: -2.22em; left: 0em;"><span class="mrow" id="MathJax-Span-962"><span class="msubsup" id="MathJax-Span-963"><span style="display: inline-block; position: relative; width: 1.16em; height: 0px;"><span style="position: absolute; clip: rect(3.15em, 1000.74em, 4.123em, -999.998em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-964" style="font-family: MathJax_Math-italic;">C<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.049em;"></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -3.84em; left: 0.697em;"><span class="mn" id="MathJax-Span-965" style="font-size: 70.7%; font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.225em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.219em; border-left: 0px solid; width: 0px; height: 1.114em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>C</mi><mn>1</mn></msub></math></span></span><script type="math/tex" id="MathJax-Element-55"></script></span> contiene los índices de las observaciones agrupadas en el <em>cluster</em> 1. La nomenclatura empleada para indicar que la observación <span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-56-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>i</mi></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-966" style="width: 0.419em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.326em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.438em, 1000.28em, 2.363em, -999.998em); top: -2.22em; left: 0em;"><span class="mrow" id="MathJax-Span-967"><span class="mi" id="MathJax-Span-968" style="font-family: MathJax_Math-italic;">i</span></span><span style="display: inline-block; width: 0px; height: 2.225em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.053em; border-left: 0px solid; width: 0px; height: 0.947em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi></math></span></span><script type="math/tex" id="MathJax-Element-56">i</script></span> pertenece al <em>cluster</em> <span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-57-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>k</mi></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-969" style="width: 0.604em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.512em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.391em, 1000.51em, 2.363em, -999.998em); top: -2.22em; left: 0em;"><span class="mrow" id="MathJax-Span-970"><span class="mi" id="MathJax-Span-971" style="font-family: MathJax_Math-italic;">k</span></span><span style="display: inline-block; width: 0px; height: 2.225em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.053em; border-left: 0px solid; width: 0px; height: 0.947em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>k</mi></math></span></span><script type="math/tex" id="MathJax-Element-57"></script></span> es: <span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-58-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>i</mi><mo>&amp;#x2208;</mo><msub><mi>C</mi><mi>k</mi></msub></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-972" style="width: 3.289em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.734em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.391em, 1002.73em, 2.502em, -999.998em); top: -2.22em; left: 0em;"><span class="mrow" id="MathJax-Span-973"><span class="mi" id="MathJax-Span-974" style="font-family: MathJax_Math-italic;">i</span><span class="mo" id="MathJax-Span-975" style="font-family: MathJax_Main; padding-left: 0.28em;">∈</span><span class="msubsup" id="MathJax-Span-976" style="padding-left: 0.28em;"><span style="display: inline-block; position: relative; width: 1.16em; height: 0px;"><span style="position: absolute; clip: rect(3.15em, 1000.74em, 4.123em, -999.998em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-977" style="font-family: MathJax_Math-italic;">C<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.049em;"></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -3.84em; left: 0.697em;"><span class="mi" id="MathJax-Span-978" style="font-size: 70.7%; font-family: MathJax_Math-italic;">k</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.225em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.219em; border-left: 0px solid; width: 0px; height: 1.169em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>i</mi><mo>∈</mo><msub><mi>C</mi><mi>k</mi></msub></math></span></span><script type="math/tex" id="MathJax-Element-58">i \in C_k</script></span>. Todos los sets satisfacen dos propiedades:</p>
+							<ul style="font-size: 60%;">
+								<li><p><span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-59-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><msub><mi>C</mi><mn>1</mn></msub><mo>&amp;#x222A;</mo><msub><mi>C</mi><mn>2</mn></msub><mo>&amp;#x222A;</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>&amp;#x222A;</mo><msub><mi>C</mi><mi>K</mi></msub><mo>=</mo><mo fence=&quot;false&quot; stretchy=&quot;false&quot;>{</mo><mn>1</mn><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><mi>n</mi><mo fence=&quot;false&quot; stretchy=&quot;false&quot;>}</mo></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-979" style="width: 16.067em; display: inline-block;"><span style="display: inline-block; position: relative; width: 13.382em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.345em, 1013.34em, 2.595em, -999.998em); top: -2.22em; left: 0em;"><span class="mrow" id="MathJax-Span-980"><span class="msubsup" id="MathJax-Span-981"><span style="display: inline-block; position: relative; width: 1.16em; height: 0px;"><span style="position: absolute; clip: rect(3.15em, 1000.74em, 4.123em, -999.998em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-982" style="font-family: MathJax_Math-italic;">C<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.049em;"></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -3.84em; left: 0.697em;"><span class="mn" id="MathJax-Span-983" style="font-size: 70.7%; font-family: MathJax_Main;">1</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mo" id="MathJax-Span-984" style="font-family: MathJax_Main; padding-left: 0.234em;">∪</span><span class="msubsup" id="MathJax-Span-985" style="padding-left: 0.234em;"><span style="display: inline-block; position: relative; width: 1.16em; height: 0px;"><span style="position: absolute; clip: rect(3.15em, 1000.74em, 4.123em, -999.998em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-986" style="font-family: MathJax_Math-italic;">C<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.049em;"></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -3.84em; left: 0.697em;"><span class="mn" id="MathJax-Span-987" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mo" id="MathJax-Span-988" style="font-family: MathJax_Main;">∪</span><span class="mo" id="MathJax-Span-989" style="font-family: MathJax_Main;">.</span><span class="mo" id="MathJax-Span-990" style="font-family: MathJax_Main; padding-left: 0.188em;">.</span><span class="mo" id="MathJax-Span-991" style="font-family: MathJax_Main; padding-left: 0.188em;">.</span><span class="mo" id="MathJax-Span-992" style="font-family: MathJax_Main; padding-left: 0.188em;">∪</span><span class="msubsup" id="MathJax-Span-993"><span style="display: inline-block; position: relative; width: 1.438em; height: 0px;"><span style="position: absolute; clip: rect(3.15em, 1000.74em, 4.123em, -999.998em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-994" style="font-family: MathJax_Math-italic;">C<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.049em;"></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -3.84em; left: 0.697em;"><span class="mi" id="MathJax-Span-995" style="font-size: 70.7%; font-family: MathJax_Math-italic;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.049em;"></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mo" id="MathJax-Span-996" style="font-family: MathJax_Main; padding-left: 0.28em;">=</span><span class="mo" id="MathJax-Span-997" style="font-family: MathJax_Main; padding-left: 0.28em;">{</span><span class="mn" id="MathJax-Span-998" style="font-family: MathJax_Main;">1</span><span class="mo" id="MathJax-Span-999" style="font-family: MathJax_Main;">,</span><span class="mo" id="MathJax-Span-1000" style="font-family: MathJax_Main; padding-left: 0.188em;">.</span><span class="mo" id="MathJax-Span-1001" style="font-family: MathJax_Main; padding-left: 0.188em;">.</span><span class="mo" id="MathJax-Span-1002" style="font-family: MathJax_Main; padding-left: 0.188em;">.</span><span class="mo" id="MathJax-Span-1003" style="font-family: MathJax_Main; padding-left: 0.188em;">,</span><span class="mi" id="MathJax-Span-1004" style="font-family: MathJax_Math-italic; padding-left: 0.188em;">n</span><span class="mo" id="MathJax-Span-1005" style="font-family: MathJax_Main;">}</span></span><span style="display: inline-block; width: 0px; height: 2.225em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.331em; border-left: 0px solid; width: 0px; height: 1.336em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>C</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>C</mi><mn>2</mn></msub><mo>∪</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>∪</mo><msub><mi>C</mi><mi>K</mi></msub><mo>=</mo><mo fence="false" stretchy="false">{</mo><mn>1</mn><mo>,</mo><mo>.</mo><mo>.</mo><mo>.</mo><mo>,</mo><mi>n</mi><mo fence="false" stretchy="false">}</mo></math></span></span><script type="math/tex" id="MathJax-Element-59">C_1 \cup C_2 \cup ... \cup C_K = \{1,...,n\}</script></span>. Significa que toda observación pertenece al menos a uno de los <em>K</em> <em>clusters.</em></p></li>
+								<li><p><span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-60-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><msub><mi>C</mi><mi>k</mi></msub><mo>&amp;#x2229;</mo><msub><mi>C</mi><mrow class=&quot;MJX-TeXAtom-ORD&quot;><msup><mi>k</mi><mo>&amp;#x2032;</mo></msup></mrow></msub><mo>=</mo><mi mathvariant=&quot;normal&quot;>&amp;#x2205;</mi></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1006" style="width: 6.576em; display: inline-block;"><span style="display: inline-block; position: relative; width: 5.465em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.299em, 1005.42em, 2.595em, -999.998em); top: -2.22em; left: 0em;"><span class="mrow" id="MathJax-Span-1007"><span class="msubsup" id="MathJax-Span-1008"><span style="display: inline-block; position: relative; width: 1.16em; height: 0px;"><span style="position: absolute; clip: rect(3.15em, 1000.74em, 4.123em, -999.998em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-1009" style="font-family: MathJax_Math-italic;">C<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.049em;"></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -3.84em; left: 0.697em;"><span class="mi" id="MathJax-Span-1010" style="font-size: 70.7%; font-family: MathJax_Math-italic;">k</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mo" id="MathJax-Span-1011" style="font-family: MathJax_Main; padding-left: 0.234em;">∩</span><span class="msubsup" id="MathJax-Span-1012" style="padding-left: 0.234em;"><span style="display: inline-block; position: relative; width: 1.345em; height: 0px;"><span style="position: absolute; clip: rect(3.15em, 1000.74em, 4.123em, -999.998em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-1013" style="font-family: MathJax_Math-italic;">C<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.049em;"></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -3.748em; left: 0.697em;"><span class="texatom" id="MathJax-Span-1014"><span class="mrow" id="MathJax-Span-1015"><span class="msup" id="MathJax-Span-1016"><span style="display: inline-block; position: relative; width: 0.558em; height: 0px;"><span style="position: absolute; clip: rect(3.336em, 1000.37em, 4.123em, -999.998em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-1017" style="font-size: 70.7%; font-family: MathJax_Math-italic;">k</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -4.257em; left: 0.373em;"><span class="mo" id="MathJax-Span-1018" style="font-size: 50%; font-family: MathJax_Main;">′</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mo" id="MathJax-Span-1019" style="font-family: MathJax_Main; padding-left: 0.28em;">=</span><span class="mi" id="MathJax-Span-1020" style="font-family: MathJax_Main; padding-left: 0.28em;">∅</span></span><span style="display: inline-block; width: 0px; height: 2.225em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.331em; border-left: 0px solid; width: 0px; height: 1.336em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>C</mi><mi>k</mi></msub><mo>∩</mo><msub><mi>C</mi><mrow class="MJX-TeXAtom-ORD"><msup><mi>k</mi><mo>′</mo></msup></mrow></msub><mo>=</mo><mi mathvariant="normal">∅</mi></math></span></span><script type="math/tex" id="MathJax-Element-60">C_k \cap C_{k'} = \emptyset</script></span> para todo <span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-61-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>k</mi><mo>&amp;#x2260;</mo><msup><mi>k</mi><mo>&amp;#x2032;</mo></msup></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1021" style="width: 3.197em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.641em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.345em, 1002.64em, 2.595em, -999.998em); top: -2.22em; left: 0em;"><span class="mrow" id="MathJax-Span-1022"><span class="mi" id="MathJax-Span-1023" style="font-family: MathJax_Math-italic;">k</span><span class="mo" id="MathJax-Span-1024" style="font-family: MathJax_Main; padding-left: 0.28em;">≠</span><span class="msup" id="MathJax-Span-1025" style="padding-left: 0.28em;"><span style="display: inline-block; position: relative; width: 0.789em; height: 0px;"><span style="position: absolute; clip: rect(3.15em, 1000.51em, 4.123em, -999.998em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-1026" style="font-family: MathJax_Math-italic;">k</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -4.35em; left: 0.512em;"><span class="mo" id="MathJax-Span-1027" style="font-size: 70.7%; font-family: MathJax_Main;">′</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.225em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.331em; border-left: 0px solid; width: 0px; height: 1.281em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>k</mi><mo>≠</mo><msup><mi>k</mi><mo>′</mo></msup></math></span></span><script type="math/tex" id="MathJax-Element-61"></script></span>. Implica que los <em>clusters</em> no solapan, ninguna observación pertenece a más de un <em>cluster</em> a la vez.</p></li>
+							</ul>
+
+						</section>
+
+						<section data-background="PANTILLA_FINANZAS1.png">
+							<h2>Intuición de Kmeans</h2>
+							<br>
+							<p align="justify" style="font-size: 60%;">Dos de las medidas más comúnmente empleadas definen la varianza interna de un <em>cluster</em> (<span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-62-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>W</mi><mo stretchy=&quot;false&quot;>(</mo><msub><mi>C</mi><mi>k</mi></msub><mo stretchy=&quot;false&quot;>)</mo></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1028" style="width: 3.567em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.965em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.345em, 1002.87em, 2.595em, -999.998em); top: -2.22em; left: 0em;"><span class="mrow" id="MathJax-Span-1029"><span class="mi" id="MathJax-Span-1030" style="font-family: MathJax_Math-italic;">W<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.095em;"></span></span><span class="mo" id="MathJax-Span-1031" style="font-family: MathJax_Main;">(</span><span class="msubsup" id="MathJax-Span-1032"><span style="display: inline-block; position: relative; width: 1.16em; height: 0px;"><span style="position: absolute; clip: rect(3.15em, 1000.74em, 4.123em, -999.998em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-1033" style="font-family: MathJax_Math-italic;">C<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.049em;"></span></span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -3.84em; left: 0.697em;"><span class="mi" id="MathJax-Span-1034" style="font-size: 70.7%; font-family: MathJax_Math-italic;">k</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span><span class="mo" id="MathJax-Span-1035" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.225em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.331em; border-left: 0px solid; width: 0px; height: 1.336em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>W</mi><mo stretchy="false">(</mo><msub><mi>C</mi><mi>k</mi></msub><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-62">W(C_k)</script></span>) como:</p>
+							<ul align="justify" style="font-size: 60%;">
+								<li>La suma de las distancias euclídeas al cuadrado entre cada observación (<span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-63-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><msub><mi>x</mi><mi>i</mi></msub></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1036" style="width: 1.067em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.882em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.623em, 1000.88em, 2.502em, -999.998em); top: -2.22em; left: 0em;"><span class="mrow" id="MathJax-Span-1037"><span class="msubsup" id="MathJax-Span-1038"><span style="display: inline-block; position: relative; width: 0.882em; height: 0px;"><span style="position: absolute; clip: rect(3.382em, 1000.51em, 4.123em, -999.998em); top: -3.979em; left: 0em;"><span class="mi" id="MathJax-Span-1039" style="font-family: MathJax_Math-italic;">x</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span><span style="position: absolute; top: -3.84em; left: 0.558em;"><span class="mi" id="MathJax-Span-1040" style="font-size: 70.7%; font-family: MathJax_Math-italic;">i</span><span style="display: inline-block; width: 0px; height: 3.984em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.225em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.219em; border-left: 0px solid; width: 0px; height: 0.836em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>x</mi><mi>i</mi></msub></math></span></span><script type="math/tex" id="MathJax-Element-63">x_i</script></span>) y el centroide (<span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-64-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>&amp;#x03BC;</mi></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1041" style="width: 0.743em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.604em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.623em, 1000.6em, 2.595em, -999.998em); top: -2.22em; left: 0em;"><span class="mrow" id="MathJax-Span-1042"><span class="mi" id="MathJax-Span-1043" style="font-family: MathJax_Math-italic;">μ</span></span><span style="display: inline-block; width: 0px; height: 2.225em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.331em; border-left: 0px solid; width: 0px; height: 0.892em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>μ</mi></math></span></span><script type="math/tex" id="MathJax-Element-64">\mu</script></span>) de su <em>cluster</em>. Esto equivale a la suma de cuadrados internos del <em>cluster</em>.</li>
+							</ul>
+							<p align="justify" style="font-size: 60%;">$$W(C_k) = \sum_{x_i,\in C_k} (x_{i} - \mu_k)^2$$</p>
+							<ul align="justify" style="font-size: 60%;">
+								<li>La suma de las distancias euclídeas al cuadrado entre todos los pares de observaciones que forman el <em>cluster</em>, dividida entre el número de observaciones del <em>cluster</em>.</li>
+							</ul>
+							<p align="justify" style="font-size: 60%;">$$W(C_k) = \frac{1}{|C_k|} \sum_{i,i' \in C_k} \sum^p_{j=1}(x_{ij} - x_{i'j})^2$$</p>
+						</section>
+
+						<section data-background="PANTILLA_FINANZAS1.png">
+								<h2>Intuición de Kmeans Algoritmo</h2>
+								
+								<ol style="font-size: 55%;list-style-type: decimal">
+									<li><p>Asignar aleatoriamente un número entre 1 y <span class="math inline"><span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-68-Frame" tabindex="0" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>K</mi></math>" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1155" style="width: 1.067em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.882em; height: 0px; font-size: 120%;"><span style="position: absolute; clip: rect(1.391em, 1000.88em, 2.363em, -999.998em); top: -2.22em; left: 0em;"><span class="mrow" id="MathJax-Span-1156"><span class="mi" id="MathJax-Span-1157" style="font-family: MathJax_Math-italic;">K<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.049em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.225em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.053em; border-left: 0px solid; width: 0px; height: 0.947em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>K</mi></math></span></span><script type="math/tex" id="MathJax-Element-68">K</script></span> a cada observación. Esto sirve como asignación inicial aleatoria de las observaciones a los <em>clusters</em>.</p></li>
+									<li><p>Iterar los siguientes pasos hasta que la asignación de las observaciones a los <em>clusters</em> no cambie o se alcance un número máximo de iteraciones establecido por el usuario.</p>
+									<ul>
+										<li><p>2.1 Para cada uno de los <em>clusters</em> calcular su centroide. Entendiendo por centroide la posición definida por la media de cada una de las dimensiones (variables) de las observaciones que forman el <em>cluster</em>. Aunque no es siempre equivalente, puede entenderse como el centro de gravedad.</p></li>
+										<li><p>2.2 Asignar cada observación al <em>cluster</em> cuyo centroide está más próximo.</p></li>
+									</ul>
+								</ol>
+			
+						</section>
+
+						<section data-background="PANTILLA_FINANZAS1.png">
+								<h2>Intuición de Kmeans Algoritmo</h2>
+								<img src="kmeans_step_by_step.png" style="width: 50%; height: 50%"/>
+						</section>
+
+
+				</section>
+
+
+				
+
+			</div>
+
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+				transition: 'linear',
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/math/math.js', async: true }
+					// { src: 'plugin/math-katex/math-katex.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
